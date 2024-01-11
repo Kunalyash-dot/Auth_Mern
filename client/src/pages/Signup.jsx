@@ -1,12 +1,11 @@
-import {set} from 'mongoose'
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [formData,setFormData] =useState({});
   const [error,setError]=useState(false);
   const [loading,setLoading] = useState(false);
-
+  const navigate = useNavigate();
   const handleChange = (e)=>{
     console.log(e);
     setFormData ({...formData,[e.target.id]:e.target.value})
@@ -32,6 +31,7 @@ try {
     console.log("Not Connected")
     return;
   }
+  navigate('/sign-in');
 } catch (error) {
   // console.log(error)
   setLoading(false);
