@@ -31,7 +31,7 @@ try {
     console.log("Not Connected")
     return;
   }
-  navigate('/sign-in');
+  navigate('/signin');
 } catch (error) {
   // console.log(error)
   setLoading(false);
